@@ -33,17 +33,17 @@ class LinkedInCrawler:
     def init_driver(self):
         """Initialize WebDriver with fallback options if Chrome fails"""
         try:
-        #     # Try Chrome first
-        #     return self._init_chrome_driver()
-        # except WebDriverException as e:
-        #     logger.warning(f"Chrome driver failed: {e}")
-        # try:
-        #     # Fallback to Firefox if Chrome fails
-        #     logger.info("Trying Firefox as fallback...")
-            return self._init_firefox_driver()
-        except WebDriverException as firefox_error:
-            logger.error(f"Firefox driver also failed: {firefox_error}")
-            raise Exception("Could not initialize any WebDriver. Please make sure either Chrome or Firefox is installed.")
+            # Try Chrome first
+            return self._init_chrome_driver()
+        except WebDriverException as e:
+            logger.warning(f"Chrome driver failed: {e}")
+          try:
+              # Fallback to Firefox if Chrome fails
+              logger.info("Trying Firefox as fallback...")
+              return self._init_firefox_driver()
+          except WebDriverException as firefox_error:
+              logger.error(f"Firefox driver also failed: {firefox_error}")
+              raise Exception("Could not initialize any WebDriver. Please make sure either Chrome or Firefox is installed.")
 
     def _init_chrome_driver(self):
         """Initialize Chrome WebDriver with proper permissions handling"""
@@ -176,7 +176,7 @@ class LinkedInCrawler:
             return {"error": "Data not found for the profile", "url": url}
 
     def crawl_profiles(self, profiles: list[str]):
-        self.login()
+        # self.login()
         results = []
         for profile in profiles:
             # Run the async function in the event loop
