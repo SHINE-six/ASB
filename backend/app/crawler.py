@@ -176,7 +176,7 @@ class LinkedInCrawler:
             return {"error": "Data not found for the profile", "url": url}
 
     def crawl_profiles(self, profiles: list[str]):
-        # self.login()
+        self.login()
         results = []
         for profile in profiles:
             # Run the async function in the event loop
