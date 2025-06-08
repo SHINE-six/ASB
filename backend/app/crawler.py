@@ -159,13 +159,6 @@ class LinkedInCrawler:
             if not profile_content:
                 raise ValueError("Profile content is empty")
             
-            # Add the profile URL
-            # profile_content += f"\nLinkedIn URL: {url}\n"
-            
-            # return profile_content
-            
-            # print(f"Profile content: {profile_content}")
-            
             # Use the LLM to parse the profile with proper await
             data = await parse_linkedin_profile(profile_content)
             
@@ -183,13 +176,13 @@ class LinkedInCrawler:
             return {"error": "Data not found for the profile", "url": url}
 
     def crawl_profiles(self, profiles: list[str]):
-        self.login()
+        # self.login()
         results = []
         for profile in profiles:
             # Run the async function in the event loop
             data = loop.run_until_complete(self.scrape_profile(profile))
             results.append(data)
             # Add a small delay between requests to avoid rate limiting
-            time.sleep(2)
+            time.sleep(1)
         self.driver.quit()
         return results
