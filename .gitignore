@@ -1,0 +1,61 @@
+# Node.js related
+/node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Python related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Backend output data
+backend/output/
+backend/logs/
+backend/profiles.json
+backend/companies.json
+backend/venv
+
+# Frontend build files
+frontend/build/
+frontend/.env
+frontend/.cache/
+
+# IDE/editor related files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test coverage reports
+coverage/
+*.lcov
+
+# dotenv environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# JetBrains specific files
+.idea/
+
+# Logs
+*.log
+
+# NPM package lock files
+package-lock.json
